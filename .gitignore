@@ -1,0 +1,5 @@
+*.pyc
+*/*.pyc
+*.db
+db.sqlite3
+staticfiles
