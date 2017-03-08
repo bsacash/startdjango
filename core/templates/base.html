@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Start Django</title>
+  <meta name="description" content="Start Django">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+  <link rel="stylesheet" href="{% static '/css/stylesheets/application.css' %}">
+</head>
+
+<body class="green darken-1">
+
+  {% block header %}
+    <nav>
+      <div class="nav-wrapper green darken-4">
+        <a href="{% url 'index' %}" class="brand-logo center">Start Django</a>
+        <ul>
+          <!-- Opens Side Menu -->
+          <li><span onclick="openNav()"></span></li>
+          <li><a href="javascript:void(0)" onclick="openNav()"><i class="material-icons">list</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    {% block sidenav %}
+      <!-- Side Menu -->
+      <div id="mySidenav" class="sidenav z-depth-4">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ol>
+          <li><a href="#">Operating System</a></li>
+          <li><a href="#">Installations</a></li>
+          <li><a href="#">Git</a></li>
+          <li><a href="#">Starting A Project</a></li>
+          <li><a href="#">Core App</a></li>
+          <li><a href="#">Base Page</a></li>
+          <li><a href="#">Styling</a></li>
+          <li><a href="#">User Authentication</a></li>
+          <li><a href="#">Admin Panel</a></li>
+          <li><a href="#">Models</a></li>
+          <li><a href="#">Foms</a></li>
+          <li><a href="#">Deploying</a></li>
+        </ol>
+      </div>
+    {% endblock %}
+  {% endblock %}
+
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+</body>
+  <div class="space"></div>
+  <footer class="page-footer green">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <!-- Footer Information -->
+          <h5 class="white-text"></h5>
+          <p class="grey-text text-lighten-4"></p>
+          <!-- End Footer Information -->
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://www.djangoproject.com">Official Django Site</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Video Course</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2016-2017 Start Django
+      <a class="grey-text text-lighten-4 right" href="#!">Built by: @bsacash</a>
+      </div>
+    </div>
+  </footer>
+</html>
